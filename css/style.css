@@ -1,0 +1,164 @@
+/* Ship  */
+/* Game board  */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container {
+  width: 600px;
+  height: 600px;
+  background-color: red;
+  position: relative;
+  overflow: hidden;
+}
+
+.spaceShip {
+  position: absolute;
+  overflow: hidden;
+  bottom: 0;
+  left: 0;
+  width: 64px;
+  height: 64px;
+}
+
+.spaceShip img {
+  position: absolute;
+  -webkit-animation: shipAnimation 0.4s infinite steps(8);
+          animation: shipAnimation 0.4s infinite steps(8);
+}
+
+.lives {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.scores {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.missle {
+  position: absolute;
+}
+
+.missle img {
+  width: 16px;
+  height: 32px;
+}
+
+.enemy {
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.enemy img {
+  position: absolute;
+  -webkit-animation: enemyAnimation 0.4s infinite steps(5);
+          animation: enemyAnimation 0.4s infinite steps(5);
+}
+
+.enemy-big {
+  width: 128px;
+  height: 128px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.enemy-big img {
+  position: absolute;
+  -webkit-animation: enemyBigAnimation 0.5s infinite steps(8);
+          animation: enemyBigAnimation 0.5s infinite steps(8);
+}
+
+@-webkit-keyframes shipAnimation {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(-512px);
+            transform: translateX(-512px);
+  }
+}
+
+@keyframes shipAnimation {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(-512px);
+            transform: translateX(-512px);
+  }
+}
+
+@-webkit-keyframes enemyAnimation {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(-320px);
+            transform: translateX(-320px);
+  }
+}
+
+@keyframes enemyAnimation {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(-320px);
+            transform: translateX(-320px);
+  }
+}
+
+@-webkit-keyframes enemyBigAnimation {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(-1024px);
+            transform: translateX(-1024px);
+  }
+}
+
+@keyframes enemyBigAnimation {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(-1024px);
+            transform: translateX(-1024px);
+  }
+}
+/*# sourceMappingURL=style.css.map */

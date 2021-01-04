@@ -1,0 +1,93 @@
+/* Ship  */
+$shipSize: 64px 
+
+/* Game board  */
+$boardWidth: 600px
+$boardHeight: 600px
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+body
+  width: 100vw
+  height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+
+.container
+  width: $boardWidth
+  height: $boardHeight
+  background-color: red
+  position: relative
+  overflow: hidden
+
+.spaceShip
+  position: absolute
+  overflow: hidden
+  bottom: 0
+  left: 0
+  width: $shipSize
+  height: $shipSize
+  img
+    position: absolute
+    animation: shipAnimation .4s infinite steps(8)
+
+.lives
+  position: absolute
+  left: 10px
+  top: 10px
+
+.scores
+  position: absolute
+  right: 10px
+  top: 10px
+
+.missle
+  position: absolute
+  img
+    width: 16px
+    height: 32px
+
+.enemy
+  width: 64px
+  height: 64px
+  overflow: hidden
+  position: absolute
+  bottom: 0
+  left: 0
+  z-index: 1
+  img
+    position: absolute
+    animation: enemyAnimation .4s infinite steps(5)
+
+.enemy-big
+  width: 128px
+  height: 128px
+  overflow: hidden
+  position: absolute
+  bottom: 0
+  left: 0
+  img
+    position: absolute
+    animation: enemyBigAnimation .5s infinite steps(8)
+
+@keyframes shipAnimation
+  0%
+    transform: translateX(0px)
+  100%
+    transform: translateX(-512px)
+
+@keyframes enemyAnimation
+  0%
+    transform: translateX(0px)
+  100%
+    transform: translateX(-320px)
+
+@keyframes enemyBigAnimation
+  0%
+    transform: translateX(0px)
+  100%
+    transform: translateX(-1024px)
