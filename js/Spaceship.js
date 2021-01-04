@@ -21,36 +21,39 @@ export class SpaceShip {
       this.missleList.push(new Missle(this.board, this.shipElement));
   }
 
-  eventListeners = () => {
-    window.addEventListener('keydown', (e)=> {
-      switch(e.keyCode) 
-      {
-        case 65:
-          this.left = true;
-          break;
-        case 68:
-          this.right = true;
-          break;
-      }}
-    );
-    
-    window.addEventListener('keyup', (e)=> 
+  handlerKeyDown = (e) => {
+    switch(e.keyCode) 
     {
-      switch(e.keyCode) 
-      {
-        case 65:
-          this.left = false;
-          break;
-        case 68:
-          this.right = false;
-          break;
-        case 32:
-          this.shoot();
-          break;
-        default:
-          break;
-        } 
-     });
+      case 65:
+        this.left = true;
+        break;
+      case 68:
+        this.right = true;
+        break;
+    }
+  }
+
+  handlerKeyUp = (e) => {
+    switch(e.keyCode) 
+    {
+      case 65:
+        this.left = false;
+        break;
+      case 68:
+        this.right = false;
+        break;
+      case 32:
+        this.shoot();
+        break;
+      default:
+        break;
+      } 
+  }
+
+  eventListeners = () => {
+    window.addEventListener('keydown', this.handlerKeyDown);
+  
+    window.addEventListener('keyup', this.handlerKeyUp);
   }
 
   checkMove = () => {

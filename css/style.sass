@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap')
 /* Ship  */
 $shipSize: 64px 
 
@@ -11,16 +12,35 @@ $boardHeight: 600px
   padding: 0
 
 body
+  font-family: 'Rubik', sans-serif
   width: 100vw
   height: 100vh
   display: flex
   justify-content: center
   align-items: center
+  color: white
+
+.modal
+  width: $boardWidth
+  height: $boardHeight
+  position: absolute
+  background-color: #222324
+  color: white
+  display: none
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  button
+    width: 200px
+    margin-top: 30px
+    padding: 20px
+    border-radius: 20px
+    font-size: 20px
 
 .container
   width: $boardWidth
   height: $boardHeight
-  background-color: red
+  background-color: #222324
   position: relative
   overflow: hidden
 
@@ -39,11 +59,13 @@ body
   position: absolute
   left: 10px
   top: 10px
+  z-index: 999
 
 .scores
   position: absolute
   right: 10px
   top: 10px
+  z-index: 999
 
 .missle
   position: absolute
@@ -74,6 +96,22 @@ body
     position: absolute
     animation: enemyBigAnimation .5s infinite steps(8)
 
+.destroy
+  width: 64px
+  height: 64px
+  position: absolute
+  overflow: hidden
+  img
+    animation: destory .5s steps(17)
+
+.bigDestroy
+  width: 128px
+  height: 128px
+  position: absolute
+  overflow: hidden
+  img
+    animation: bigDestroy .5s steps(17)
+
 @keyframes shipAnimation
   0%
     transform: translateX(0px)
@@ -91,3 +129,17 @@ body
     transform: translateX(0px)
   100%
     transform: translateX(-1024px)
+
+@keyframes destory
+  0%
+    transform: translateX(0px)
+
+  100%
+    transform: translateX(-1088px)
+
+@keyframes bigDestroy
+  0%
+    transform: translateX(0px)
+
+  100%
+    transform: translateX(-2176px)

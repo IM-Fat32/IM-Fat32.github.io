@@ -5,7 +5,8 @@ const kindOfEnemyList = [
     lives: 1,
     image: "<img src='../images/enemy.png'/>", 
     className: "enemy", 
-    destroyClass : "destroy"
+    destroyClass : "destroy",
+    destroyImage: "<img src='../images/explosion.png'/>"
   },
   {
     scores: 60, 
@@ -13,7 +14,8 @@ const kindOfEnemyList = [
     lives: 4,
     image: "<img src='../images/enemy-big.png'/>", 
     className: "enemy-big",
-    destroyClass : "bigDestroy"
+    destroyClass : "bigDestroy",
+    destroyImage: "<img src='../images/explosion-big.png'/>"
   }
 ]
 
@@ -48,13 +50,14 @@ export class Enemy {
 
   hit = () => {
     this.lives --;
-    console.log("hit")
     if (this.lives == 0)
       this.explode();  
   }
 
   explode = () => {
-    
+    clearInterval(this.interval)
+    this.enemy.className = this.kindEnemy.destroyClass;
+    this.enemy.innerHTML = this.kindEnemy.destroyImage;
   }
   
   remove = () => {
