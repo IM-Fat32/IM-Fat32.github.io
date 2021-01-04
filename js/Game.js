@@ -127,13 +127,13 @@ const showModal = () => {
 
   const selectLevel= (i) => {
     if(i === 0) {
-      const game = new Game(2000)
+      const game = new Game(2000);
     }
     else if(i === 1) {
-      const game = new Game(1000)
+      const game = new Game(1000);
     }
     else {
-      const game = new Game(500)
+      const game = new Game(500);
     } 
     modal.style.display = "none";
   }

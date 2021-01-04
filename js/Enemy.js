@@ -10,7 +10,7 @@ const kindOfEnemyList = [
   },
   {
     scores: 60, 
-    speed: .5, 
+    speed: 1, 
     lives: 4,
     image: "<img src='../images/enemy-big.png'/>", 
     className: "enemy-big",
